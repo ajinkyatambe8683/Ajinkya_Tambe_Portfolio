@@ -1,4 +1,5 @@
 import React from 'react';
+import { Download } from 'lucide-react';
 import profileImg from '../assets/profile.png';
 
 const About = () => {
@@ -65,6 +66,18 @@ const About = () => {
                                 <span className="stat-num">90.6%</span>
                                 <span className="stat-name">SSC Distinction</span>
                             </div>
+                        </div>
+
+                        {/* Download Resume Button */}
+                        <div className="about-actions" style={{ marginTop: '30px' }}>
+                            <a 
+                                href="/Ajinkya_Sakharam_Tambe_Resume.pdf" 
+                                download="Ajinkya_Sakharam_Tambe_Resume.pdf" 
+                                className="btn btn-primary"
+                            >
+                                <Download size={18} />
+                                <span>Download Resume</span>
+                            </a>
                         </div>
                     </div>
                 </div>
