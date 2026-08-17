@@ -40,8 +40,8 @@ const About = () => {
                         {/* Download Resume Button */}
                         <div className="about-actions" style={{ marginTop: '25px', width: '100%', maxWidth: '280px' }}>
                             <a 
-                                href="/Ajinkya_Sakharam_Tambe_Resume.pdf" 
-                                download="Ajinkya_Sakharam_Tambe_Resume.pdf" 
+                                href="/Ajinkya_Tambe__Resume.pdf" 
+                                download="Ajinkya_Tambe__Resume.pdf" 
                                 className="btn btn-primary btn-block"
                                 style={{ width: '100%' }}
                             >
