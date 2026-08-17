@@ -2,27 +2,27 @@
    DESIGN SYSTEM & CUSTOM PROPERTIES
    ========================================================================== */
 :root {
-    /* Aesthetic Whitish Coder Theme Color Palette */
-    --color-bg: #FAFAFA;             /* Clean pure slate-white */
-    --color-bg-darker: #F1F5F9;      /* Soft light-slate commands */
-    --color-bg-lighter: #E2E8F0;     /* Border / Active tabs selection */
-    --color-card: rgba(255, 255, 255, 0.8); /* Semi-transparent white card */
+    /* Premium Deep Dark Espresso & Warm Bronze Theme Color Palette */
+    --color-bg: #0F0B09;             /* Deep espresso black */
+    --color-bg-darker: #080504;      /* Darkest roast black */
+    --color-bg-lighter: #1F1511;     /* Warm mocha selection */
+    --color-card: rgba(31, 21, 17, 0.65); /* Semi-transparent warm cocoa card */
     
-    --color-primary: #FF6B00;        /* Sleek Coder Orange */
-    --color-primary-glow: rgba(255, 107, 0, 0.08);
+    --color-primary: #D4A373;        /* Warm bronze-caramel gold */
+    --color-primary-glow: rgba(212, 163, 115, 0.08);
     
-    --color-accent-red: #EF4444;     /* Warning Red / Highlights */
-    --color-accent-red-glow: rgba(239, 68, 68, 0.08);
+    --color-accent-red: #D95D39;     /* Warm copper/terracotta */
+    --color-accent-red-glow: rgba(217, 93, 57, 0.08);
     
-    --color-accent-cyan: #F59E0B;    /* Amber Gold */
-    --color-accent-cyan-glow: rgba(245, 158, 11, 0.08);
+    --color-accent-cyan: #E9C46A;    /* Soft amber/champagne */
+    --color-accent-cyan-glow: rgba(233, 196, 106, 0.08);
     
-    --color-text-primary: #0F172A;   /* High-contrast graphite slate-900 */
-    --color-text-secondary: #475569; /* Slate-600 */
-    --color-text-muted: #64748B;     /* Blue-grey slate-500 */
+    --color-text-primary: #F4EAE1;   /* Rich milk-cream white */
+    --color-text-secondary: #C8B9AD; /* Soft cocoa gray */
+    --color-text-muted: #9E8D80;     /* Muted warm sand */
     
-    --color-border: rgba(15, 23, 42, 0.08); /* Thin slate border */
-    --color-border-glow: rgba(255, 107, 0, 0.25);
+    --color-border: rgba(244, 234, 225, 0.08); /* Thin warm cream border */
+    --color-border-glow: rgba(212, 163, 115, 0.25);
 
     /* Fonts */
     --font-heading: 'Outfit', sans-serif;
@@ -158,7 +158,7 @@ input, textarea, button {
 .mesh-blob-1 {
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.12) 0%, transparent 80%);
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.15) 0%, transparent 80%);
     top: -10%;
     right: -10%;
     animation: floatBlob1 25s infinite alternate ease-in-out;
@@ -167,7 +167,7 @@ input, textarea, button {
 .mesh-blob-2 {
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 80%);
+    background: radial-gradient(circle, rgba(233, 196, 106, 0.15) 0%, transparent 80%);
     bottom: -15%;
     left: -10%;
     animation: floatBlob2 30s infinite alternate ease-in-out;
@@ -176,7 +176,7 @@ input, textarea, button {
 .mesh-blob-3 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 80%);
+    background: radial-gradient(circle, rgba(188, 108, 37, 0.15) 0%, transparent 80%);
     top: 30%;
     left: 20%;
     animation: floatBlob3 20s infinite alternate ease-in-out;
@@ -185,7 +185,7 @@ input, textarea, button {
 .mesh-blob-4 {
     width: 550px;
     height: 550px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 80%);
+    background: radial-gradient(circle, rgba(221, 161, 94, 0.15) 0%, transparent 80%);
     bottom: 20%;
     right: 15%;
     animation: floatBlob4 28s infinite alternate ease-in-out;
@@ -240,14 +240,15 @@ input, textarea, button {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary) 50%, #4f46e5);
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary) 50%, #BC6C25);
+    color: #0F0B09;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(212, 163, 115, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 6px 24px rgba(212, 163, 115, 0.4);
 }
 
 .btn-secondary {
@@ -419,8 +420,8 @@ input, textarea, button {
 .welcome-badge {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba(99, 102, 241, 0.08);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(212, 163, 115, 0.08);
+    border: 1px solid rgba(212, 163, 115, 0.2);
     border-radius: 9999px;
     color: var(--color-primary);
     font-size: 0.85rem;
@@ -476,10 +477,10 @@ input, textarea, button {
 }
 
 .social-icon:hover {
-    color: var(--color-text-primary);
+    color: #0F0B09;
     background: var(--color-primary);
     transform: translateY(-3px);
-    box-shadow: 0 10px 15px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 15px rgba(212, 163, 115, 0.25);
     border-color: var(--color-primary);
 }
 
@@ -502,7 +503,7 @@ input, textarea, button {
     left: 20px;
     right: -20px;
     bottom: -20px;
-    border: 2px dashed rgba(99, 102, 241, 0.3);
+    border: 2px dashed rgba(212, 163, 115, 0.3);
     border-radius: 16px;
     z-index: -1;
 }
@@ -607,14 +608,14 @@ input, textarea, button {
     position: absolute;
     inset: 0;
     border-radius: 18px;
-    box-shadow: inset 0 0 20px rgba(255, 107, 0, 0.05);
+    box-shadow: inset 0 0 20px rgba(212, 163, 115, 0.05);
     pointer-events: none;
 }
 
 .profile-img-frame:hover {
     transform: translateY(-5px);
-    border-color: var(--color-accent-cyan); /* Orange hover border shift */
-    box-shadow: 0 20px 40px rgba(255, 107, 0, 0.08);
+    border-color: var(--color-accent-cyan); /* Gold hover border shift */
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.12);
 }
 
 .profile-photo {
@@ -748,12 +749,12 @@ input, textarea, button {
     border-color: rgba(239, 68, 68, 0.2);
 }
 .indigo-glow {
-    background: rgba(99, 102, 241, 0.08);
-    border-color: rgba(99, 102, 241, 0.2);
+    background: rgba(212, 163, 115, 0.08);
+    border-color: rgba(212, 163, 115, 0.2);
 }
 .cyan-glow {
-    background: rgba(6, 182, 212, 0.08);
-    border-color: rgba(6, 182, 212, 0.2);
+    background: rgba(233, 196, 106, 0.08);
+    border-color: rgba(233, 196, 106, 0.2);
 }
 
 .text-accent-red { color: var(--color-accent-red); }
@@ -788,23 +789,23 @@ input, textarea, button {
 }
 
 .red-chip:hover {
-    background: rgba(239, 68, 68, 0.08);
-    border-color: rgba(239, 68, 68, 0.4);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+    background: rgba(217, 93, 57, 0.08);
+    border-color: rgba(217, 93, 57, 0.4);
+    box-shadow: 0 4px 12px rgba(217, 93, 57, 0.15);
     color: var(--color-accent-red);
 }
 
 .indigo-chip:hover {
-    background: rgba(99, 102, 241, 0.08);
-    border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    background: rgba(212, 163, 115, 0.08);
+    border-color: rgba(212, 163, 115, 0.4);
+    box-shadow: 0 4px 12px rgba(212, 163, 115, 0.15);
     color: var(--color-primary);
 }
 
 .cyan-chip:hover {
-    background: rgba(6, 182, 212, 0.08);
-    border-color: rgba(6, 182, 212, 0.4);
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
+    background: rgba(233, 196, 106, 0.08);
+    border-color: rgba(233, 196, 106, 0.4);
+    box-shadow: 0 4px 12px rgba(233, 196, 106, 0.15);
     color: var(--color-accent-cyan);
 }
 
@@ -890,8 +891,8 @@ input, textarea, button {
 .timeline-date {
     display: inline-block;
     padding: 4px 12px;
-    background: rgba(99, 102, 241, 0.08);
-    border: 1px solid rgba(99, 102, 241, 0.15);
+    background: rgba(212, 163, 115, 0.08);
+    border: 1px solid rgba(212, 163, 115, 0.15);
     border-radius: 9999px;
     color: var(--color-primary);
     font-size: 0.8rem;
@@ -1070,11 +1071,14 @@ input, textarea, button {
 .project-link-btn.primary {
     background: var(--color-primary);
     border-color: var(--color-primary);
-    color: #fff;
+    color: #0F0B09;
+    font-weight: 600;
 }
 
 .project-link-btn.primary:hover {
-    background: #4f46e5;
+    background: #BC6C25;
+    border-color: #BC6C25;
+    color: #fff;
 }
 
 /* ==========================================================================
@@ -1123,9 +1127,9 @@ input, textarea, button {
 
 .contact-card-item:hover .contact-card-icon {
     background: var(--color-primary);
-    color: #fff;
+    color: #0F0B09;
     border-color: var(--color-primary);
-    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 8px 15px rgba(212, 163, 115, 0.25);
 }
 
 .contact-card-details h4 {
@@ -1136,21 +1140,22 @@ input, textarea, button {
 }
 
 .contact-card-details a {
+    color: var(--color-text-primary);
     font-size: 1.05rem;
     font-weight: 600;
-    word-break: break-all;
 }
 
 .contact-card-details a:hover {
     color: var(--color-primary);
 }
 
-/* Form Panel Styling */
+/* Contact Form Panel */
 .contact-form-panel {
     background: var(--color-card);
     border: 1px solid var(--color-border);
-    border-radius: 20px;
     padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
 }
 
 .contact-form {
@@ -1172,7 +1177,7 @@ input, textarea, button {
 }
 
 .form-group label {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-text-primary);
 }
@@ -1188,7 +1193,7 @@ input, textarea, button {
 
 .form-group input:focus, .form-group textarea:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 0 10px rgba(212, 163, 115, 0.2);
 }
 
 .form-submit-btn {
@@ -1517,8 +1522,8 @@ input, textarea, button {
     z-index: -1;
     background: radial-gradient(
         600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
-        rgba(255, 107, 0, 0.055) 0%,   /* Soft orange spotlight scan light */
-        rgba(255, 107, 0, 0.01) 50%,
+        rgba(212, 163, 115, 0.06) 0%,   /* Soft bronze spotlight scan light */
+        rgba(212, 163, 115, 0.01) 50%,
         transparent 80%
     );
     transition: background 0.1s ease;
