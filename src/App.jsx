@@ -7,6 +7,7 @@ import Timeline from './components/Timeline';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BackgroundCodeElements from './components/BackgroundCodeElements';
 
 function App() {
     const [activeSection, setActiveSection] = useState('home');
@@ -83,6 +84,9 @@ function App() {
 
             {/* Interactive Cursor Spotlight Background Hover Effect */}
             <div className="mouse-spotlight"></div>
+
+            {/* Subtle floating background code elements */}
+            <BackgroundCodeElements />
 
             {/* Rotational Background Compass Watermark (Large Detailed Sharp Blueprint) */}
             <div className="bg-compass-container">
@@ -283,8 +287,91 @@ function App() {
                         
                         {/* Center Pivot circles */}
                         <circle cx="100" cy="100" r="4.5" fill="var(--color-bg)" stroke="currentColor" strokeWidth="0.8" />
-                        <circle cx="100" cy="100" r="1.5" fill="currentColor" />
                     </g>
+                </svg>
+            </div>
+
+            {/* Laptop Blueprint Watermark (Subtle Left Center Web Indicator) */}
+            <div className="bg-laptop-container blueprint-watermark">
+                <svg viewBox="0 0 200 200" className="bg-blueprint bg-blueprint-laptop">
+                    {/* Grid / Tech circles */}
+                    <circle cx="100" cy="100" r="95" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.15" />
+                    <circle cx="100" cy="100" r="90" stroke="currentColor" strokeWidth="0.3" fill="none" strokeDasharray="1 3" opacity="0.2" />
+                    <circle cx="100" cy="100" r="65" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.1" />
+                    
+                    {/* Polar grid lines */}
+                    <line x1="100" y1="5" x2="100" y2="195" stroke="currentColor" strokeWidth="0.3" strokeDasharray="2 2" opacity="0.1" />
+                    <line x1="5" y1="100" x2="195" y2="100" stroke="currentColor" strokeWidth="0.3" strokeDasharray="2 2" opacity="0.1" />
+                    
+                    {/* Laptop outline */}
+                    {/* Screen outer frame */}
+                    <rect x="45" y="55" width="110" height="70" rx="3" stroke="currentColor" strokeWidth="1.2" fill="none" />
+                    {/* Screen inner area */}
+                    <rect x="50" y="60" width="100" height="60" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.8" />
+                    
+                    {/* Keyboard / base section */}
+                    <path d="M40,125 L160,125 L175,138 L25,138 Z" stroke="currentColor" strokeWidth="1.2" fill="none" />
+                    {/* Laptop hinge detail */}
+                    <rect x="90" y="125" width="20" height="3" stroke="currentColor" strokeWidth="0.6" fill="none" />
+                    
+                    {/* Trackpad */}
+                    <rect x="88" y="129" width="24" height="8" rx="1" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.7" />
+                    
+                    {/* Decorative code lines / mockup inside screen */}
+                    <line x1="55" y1="68" x2="85" y2="68" stroke="currentColor" strokeWidth="0.8" opacity="0.5" />
+                    <line x1="55" y1="75" x2="125" y2="75" stroke="currentColor" strokeWidth="0.8" opacity="0.6" />
+                    <line x1="55" y1="82" x2="110" y2="82" stroke="currentColor" strokeWidth="0.8" opacity="0.6" />
+                    <line x1="65" y1="89" x2="95" y2="89" stroke="currentColor" strokeWidth="0.8" opacity="0.5" />
+                    <line x1="65" y1="96" x2="135" y2="96" stroke="currentColor" strokeWidth="0.8" opacity="0.6" />
+                    <line x1="55" y1="103" x2="100" y2="103" stroke="currentColor" strokeWidth="0.8" opacity="0.5" />
+                    <line x1="55" y1="110" x2="75" y2="110" stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
+                    
+                    {/* Tech Text Watermark details */}
+                    <text x="100" y="45" textAnchor="middle" fontSize="6.5" fill="currentColor" fontFamily="monospace" fontWeight="700" letterSpacing="1" opacity="0.5">WEB RESPONSIVE PLATFORM</text>
+                    <text x="25" y="152" fontSize="5.5" fill="currentColor" fontFamily="monospace" opacity="0.4">W: 1920px</text>
+                    <text x="145" y="152" fontSize="5.5" fill="currentColor" fontFamily="monospace" opacity="0.4">H: 1080px</text>
+                    <text x="100" y="175" textAnchor="middle" fontSize="5" fill="currentColor" fontFamily="monospace" opacity="0.3">SYSTEM_CORE: REACT.JS</text>
+                </svg>
+            </div>
+
+            {/* Mobile Blueprint Watermark (Subtle Right Center Mobile Indicator) */}
+            <div className="bg-mobile-container blueprint-watermark">
+                <svg viewBox="0 0 200 200" className="bg-blueprint bg-blueprint-mobile">
+                    {/* Concentric blueprint circles */}
+                    <circle cx="100" cy="100" r="95" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.12" />
+                    <circle cx="100" cy="100" r="75" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 2" fill="none" opacity="0.15" />
+                    
+                    {/* Crosshairs */}
+                    <line x1="100" y1="5" x2="100" y2="195" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
+                    <line x1="5" y1="100" x2="195" y2="100" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
+                    
+                    {/* Mobile device frame */}
+                    <rect x="65" y="35" width="70" height="130" rx="10" stroke="currentColor" strokeWidth="1.2" fill="none" />
+                    {/* Mobile screen outer border */}
+                    <rect x="69" y="39" width="62" height="122" rx="7" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.8" />
+                    
+                    {/* Notch/Dynamic Island */}
+                    <rect x="88" y="43" width="24" height="4" rx="2" stroke="currentColor" strokeWidth="0.6" fill="currentColor" opacity="0.6" />
+                    
+                    {/* App Mockup GUI lines inside screen */}
+                    {/* App Header */}
+                    <rect x="74" y="49" width="52" height="8" rx="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+                    {/* App Hero / graphic banner */}
+                    <rect x="74" y="60" width="52" height="28" rx="2" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+                    {/* App card grid */}
+                    <rect x="74" y="92" width="23" height="20" rx="2" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+                    <rect x="103" y="92" width="23" height="20" rx="2" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+                    <rect x="74" y="116" width="52" height="12" rx="2" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+                    <rect x="74" y="132" width="52" height="12" rx="2" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+                    
+                    {/* Home indicator bar */}
+                    <line x1="90" y1="157" x2="110" y2="157" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.7" />
+                    
+                    {/* Tech Text Watermark details */}
+                    <text x="100" y="24" textAnchor="middle" fontSize="6.5" fill="currentColor" fontFamily="monospace" fontWeight="700" letterSpacing="1" opacity="0.5">MOBILE APPLICATION</text>
+                    <text x="32" y="178" fontSize="5.5" fill="currentColor" fontFamily="monospace" opacity="0.4">DPI: 460</text>
+                    <text x="135" y="178" fontSize="5.5" fill="currentColor" fontFamily="monospace" opacity="0.4">viewport-y</text>
+                    <text x="100" y="185" textAnchor="middle" fontSize="5.5" fill="currentColor" fontFamily="monospace" opacity="0.3">NATIVE_PLATFORM: REACT NATIVE</text>
                 </svg>
             </div>
 

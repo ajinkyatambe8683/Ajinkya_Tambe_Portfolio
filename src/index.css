@@ -925,6 +925,10 @@ input, textarea, button {
     list-style-type: disc;
 }
 
+.timeline-cert-link:hover {
+    color: var(--color-text-primary) !important;
+}
+
 /* ==========================================================================
    PROJECTS SECTION
    ========================================================================== */
@@ -1500,9 +1504,9 @@ input, textarea, button {
     top: auto;
     right: auto;
     bottom: 5%;
-    left: -120px;
-    width: 380px;
-    height: 380px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
     opacity: 0.12; /* Increased visibility blueprint for bottom corner */
     transform: translate(calc(var(--mouse-offset-x, 0) * 15px), calc(var(--mouse-offset-y, 0) * 15px)); /* Counter-parallax motion! */
 }
@@ -1562,4 +1566,301 @@ input, textarea, button {
     60% { transform: rotate(340deg); }
     80% { transform: rotate(380deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   CERTIFICATE VIEWER MODAL
+   ========================================================================== */
+.certificate-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 11, 9, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+    animation: modalFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-modal-container {
+    width: 100%;
+    max-width: 1000px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8);
+    background: rgba(31, 21, 17, 0.65);
+    animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.certificate-modal-header {
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    background-color: rgba(24, 16, 13, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.certificate-modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+}
+
+.certificate-modal-subtitle {
+    font-size: 0.88rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.certificate-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.certificate-modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    background: rgba(244, 234, 225, 0.03);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.certificate-modal-btn:hover {
+    background: var(--color-primary-glow);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(212, 163, 115, 0.15);
+}
+
+.certificate-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    background: rgba(244, 234, 225, 0.03);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.certificate-modal-close:hover {
+    background: rgba(217, 93, 57, 0.1);
+    border-color: var(--color-accent-red);
+    color: var(--color-accent-red);
+    transform: rotate(90deg);
+}
+
+.certificate-modal-body {
+    flex: 1;
+    background-color: #15110e;
+    position: relative;
+}
+
+.certificate-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Animations for Modal */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================================================
+   BACKGROUND FLOATING CODE ELEMENTS
+   ========================================================================== */
+.bg-code-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+    pointer-events: none;
+    user-select: none;
+    transform: translate(calc(var(--mouse-offset-x, 0) * -30px), calc(var(--mouse-offset-y, 0) * -30px));
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.bg-code-item {
+    color: var(--color-primary);
+    opacity: 0.04;
+    white-space: nowrap;
+    animation: floatCodeItem 24s infinite ease-in-out alternate;
+    text-shadow: 0 0 8px rgba(212, 163, 115, 0.08);
+    transition: color var(--transition-slow), opacity var(--transition-slow);
+}
+
+/* Add slight variations to some items on mouse spotlight approach if close */
+.bg-code-item:nth-child(2n) {
+    animation-name: floatCodeItemAlternate;
+    color: var(--color-accent-cyan);
+}
+
+@keyframes floatCodeItem {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.03;
+    }
+    50% {
+        opacity: 0.06;
+    }
+    100% {
+        transform: translateY(-25px) rotate(1.5deg);
+        opacity: 0.03;
+    }
+}
+
+@keyframes floatCodeItemAlternate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.02;
+    }
+    50% {
+        opacity: 0.05;
+    }
+    100% {
+        transform: translateY(-15px) rotate(-1.5deg);
+        opacity: 0.02;
+    }
+}
+
+/* Responsive adjustment for Mobile view of Certificate Modal */
+@media (max-width: 768px) {
+    .certificate-modal-container {
+        height: 75vh;
+        max-width: 100%;
+        border-radius: 16px;
+    }
+    
+    .certificate-modal-header {
+        padding: 12px 18px;
+    }
+    
+    .certificate-modal-title {
+        font-size: 1.05rem;
+    }
+    
+    .btn-text {
+        display: none; /* Hide label, keep only icons on mobile buttons */
+    }
+    
+    .certificate-modal-btn {
+        padding: 8px;
+    }
+}
+
+/* ==========================================================================
+   LAPTOP & MOBILE BLUEPRINT WATERMARKS
+   ========================================================================== */
+.blueprint-watermark {
+    position: fixed;
+    z-index: -2;
+    color: var(--color-text-primary);
+    pointer-events: none;
+    user-select: none;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.bg-laptop-container {
+    top: 5%;
+    left: -160px;
+    width: 330px;
+    height: 330px;
+    opacity: 0.06; /* Lowered base opacity to prevent distraction */
+    transform: translate(calc(var(--mouse-offset-x, 0) * -18px), calc(var(--mouse-offset-y, 0) * -18px));
+}
+
+.bg-mobile-container {
+    top: 40%;
+    left: -110px;
+    right: auto;
+    width: 230px;
+    height: 230px;
+    opacity: 0.07; /* Lowered base opacity to prevent distraction */
+    transform: translate(calc(var(--mouse-offset-x, 0) * -12px), calc(var(--mouse-offset-y, 0) * -12px));
+}
+
+.bg-blueprint {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+}
+
+.bg-blueprint-laptop {
+    animation: floatLaptopBlueprint 22s ease-in-out infinite alternate;
+}
+
+.bg-blueprint-mobile {
+    animation: floatMobileBlueprint 18s ease-in-out infinite alternate;
+}
+
+@keyframes floatLaptopBlueprint {
+    0% { transform: rotate(-1deg) translateY(0); }
+    100% { transform: rotate(1deg) translateY(-10px); }
+}
+
+@keyframes floatMobileBlueprint {
+    0% { transform: rotate(2deg) translateY(0); }
+    100% { transform: rotate(-2deg) translateY(-8px); }
+}
+
+/* Responsive constraints to prevent background crowding on smaller viewports */
+@media (max-width: 1440px) {
+    .bg-laptop-container {
+        left: -200px;
+        opacity: 0.04;
+    }
+    
+    .bg-mobile-container {
+        left: -150px;
+        opacity: 0.05;
+    }
+}
+
+@media (max-width: 1280px) {
+    .bg-laptop-container, .bg-mobile-container {
+        display: none; /* Hide entirely on laptops and smaller screens to avoid overlapping text */
+    }
 }
