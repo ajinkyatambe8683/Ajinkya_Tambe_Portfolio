@@ -61,29 +61,54 @@ const Contact = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus({ submitting: true, success: false, message: '' });
 
-        setTimeout(() => {
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/ajinkyatambe8683@gmail.com", {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    _captcha: "false"
+                })
+            });
+
+            if (response.ok) {
+                setStatus({
+                    submitting: false,
+                    success: true,
+                    message: `Success! Thank you, ${formData.name}. Your message has been sent. I will get back to you at ${formData.email} shortly.`
+                });
+
+                setFormData({
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+
+                setTimeout(() => {
+                    setStatus(prev => ({ ...prev, message: '' }));
+                }, 6000);
+            } else {
+                const data = await response.json().catch(() => ({}));
+                throw new Error(data.message || 'Something went wrong. Please try again.');
+            }
+        } catch (error) {
             setStatus({
                 submitting: false,
-                success: true,
-                message: `Success! Thank you, ${formData.name}. Your message has been sent. I will get back to you at ${formData.email} shortly.`
+                success: false,
+                message: error.message || 'Failed to send message. Please try again later.'
             });
-
-            setFormData({
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
-            });
-
-            setTimeout(() => {
-                setStatus(prev => ({ ...prev, message: '' }));
-            }, 6000);
-
-        }, 1500);
+        }
     };
 
     return (
