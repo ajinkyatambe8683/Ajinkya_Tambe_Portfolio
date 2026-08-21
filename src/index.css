@@ -958,6 +958,18 @@ input, textarea, button {
     overflow: hidden;
 }
 
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
 .project-graphic-placeholder {
     width: 100%;
     height: 100%;
@@ -1360,6 +1372,10 @@ input, textarea, button {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .timeline-item {
+        justify-content: flex-start;
     }
 
     /* Navbar */
@@ -1862,5 +1878,50 @@ input, textarea, button {
 @media (max-width: 1280px) {
     .bg-laptop-container, .bg-mobile-container {
         display: none; /* Hide entirely on laptops and smaller screens to avoid overlapping text */
+    }
+}
+
+@media (max-width: 1024px) {
+    .bg-code-container {
+        display: none; /* Hide floating background code snippets on tablet and mobile to ensure zero text overlap and maximum readability */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+        min-height: auto;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-panel {
+        padding: 24px 16px;
+    }
+
+    .project-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .project-link-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
